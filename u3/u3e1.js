@@ -2,4 +2,20 @@
 // U3. Clases abstractas
 // Enunciado disponible en u3e1.md / Enunciat disponible a u3e1.md
 
-//Escribe aquí tu solución / escriviu aquí la vostra solució:
+// Escribe aquí tu solución / escriviu aquí la vostra solució:
+export class Shape {
+  constructor(nSides) {
+    if (new.target === Shape) {
+      throw new Error(
+        'ERROR_ABSTRACT. Abstract class Shape cannot be directly instantiated.'
+      );
+    }
+    this.nSides = nSides;
+  }
+
+  getArea() {
+    throw new Error(
+      'ERROR_ABSTRACT_METHOD. Method "getArea()" should be implemented by child classes of "Shape".'
+    );
+  }
+}
